@@ -1,0 +1,153 @@
+[
+    {
+      "categoryId": "1",
+      "name": "Iphone X",
+      "img": "https://www.manisharmaphotografy.com/data/candid-wedding-photographers-in-delhi.jpg",
+      "price": "28,000",
+      "title": "Iphone",
+      "description": "Full fresh, Battery percentage 98%.",
+      "used": "Only two months used ",
+      "reason": "Bought a new one",
+      "seller": "Rafi Ahmed",
+      "location": "Exclient",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+      
+    },
+    {
+        "categoryId": "1", 
+      "name": "Iphone 11",
+      "img": "https://static.toiimg.com/thumb/resizemode-4,msid-67420101,width-600/67420101.jpg",
+      "price": "48,000",
+      "title": "Iphone",
+      "description": "Fully fresh, Battery percentage 88%.",
+      "used": "One year used ",
+      "reason": "Got a new phone from my father.",
+      "seller": "Nafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "1",
+      "name": "Iphone 7 plus",
+      "img": "https://wp.inews.co.uk/wp-content/uploads/2017/03/IMG_0322-1.jpg",
+      "price": "17,000",
+      "title": "Iphone",
+      "description": "Full fresh. just a litle scrach on the left right corner. Battery percentage 90%.",
+      "used": "One and a half year used",
+      "reason": "Switch to Android",
+      "seller": "Rafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Exclient",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "2",
+      "name": "Samsung Galaxy S20+ 5G",
+      "img": "https://s.yimg.com/uu/api/res/1.2/0KhVfDOMOzh5GMrgTwMatQ--~B/Zmk9ZmlsbDtoPTU4NDt3PTg3NTthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-06/23dbeb10-a97e-11ea-bfbf-e6d7368941d4.cf.jpg",
+      "price": "37000",
+      "title": "Samsung",
+      "description": "Full fresh. You can't see any difference with a new one. ",
+      "used": "Only 6 months year used ",
+      "reason": "Got a new phone from my sister",
+      "seller": "Araf Ahmed",
+      "location": "Dhaka",
+      "condition": "Exclient",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "2",
+      "name": "Samsung Galaxy S21 FE 5G",
+      "img": "https://fdn.gsmarena.com/imgroot/reviews/22/samsung-galaxy-s21-fe-5g/hands-on/lifestyle/-1200w5/gsmarena_019.jpg",
+      "price": "42000",
+      "title": "Samsung",
+      "description": "Changed the battery once. Otherwise all ok.",
+      "used": "Seven months used ",
+      "reason": "Switch to Iphone",
+      "seller": "Nafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "2",
+      "name": "Samsung Galaxy A53 5G",
+      "img": "https://m-cdn.phonearena.com/images/review/5359-wide-two_940/Galaxy-A53-5G-review-dont-fix-whats-not-broken",
+      "price": "16,000",
+      "title": "Samsung",
+      "description": "Just a little crack on the back side.",
+      "used": "Two year used ",
+      "reason": "Need urgent money",
+      "seller": "Rafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "2",
+      "name": "Samsung Galaxy M33",
+      "img": "https://images.fonearena.com/blog/wp-content/uploads/2022/04/Samsung-Galaxy-M33-5G_FoneArena-3-1024x607.jpg",
+      "price": "7,000",
+      "title": "Samsung",
+      "description": "Front display and battery was changed once. Charging is very slow",
+      "used": "Three year used ",
+      "reason": "Gonna buy a new phone.",
+      "seller": "Araf Ahmed",
+      "location": "Dhaka",
+      "condition": "bad",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "3",
+      "name": "OnePlus 9 Pro",
+      "img": "https://www.gizbot.com/img/2021/04/oneplus-9-pro-main-image-1617697197.jpg",
+      "price": "66,000",
+      "title": "Oneplus",
+      "description": "Full fresh",
+      "used": "one amd a half year used ",
+      "reason": "Need urgent money.",
+      "seller": "Rafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Excilent",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "3",
+      "name": "OnePlus 8T",
+      "img": "https://cdn0.weddingwire.in/vendor/4933/3_2/960/jpg/45100765-2277345325885547-2694819359485853696-n_15_144933.jpeg",
+      "price": "30,000",
+      "title": "Oneplus",
+      "description": "Just a little crack on the display.",
+      "used": "One year used ",
+      "reason": "Switch to another brand",
+      "seller": "Araf Ahmed",
+      "location": "Dhaka",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+    },
+    {
+        "categoryId": "3",
+      "name": "Oneplus Nord ce",
+      "img": "https://images.moneycontrol.com/static-mcnews/2021/06/OnePlus-1.jpg",
+      "price": "16,000",
+      "title": "OnePlus",
+      "description": "Changed the battery once. Otherwise all ok.",
+      "used": "Two year used ",
+      "reason": "Gonna buy a new phone.",
+      "seller": "Nafi Ahmed",
+      "location": "Dhaka",
+      "condition": "Good",
+      "date": "24 September,22"
+      
+    }
+]

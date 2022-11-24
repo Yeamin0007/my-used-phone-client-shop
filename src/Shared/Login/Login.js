@@ -1,12 +1,33 @@
 import { useForm } from 'react-hook-form';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
+    const [error, setError] = useState('');
 
-    const{register, handleSubmit} = useForm();
+    const{register, formState: {errors}, handleSubmit} = useForm();
+
+    const {loginUser, providerLogin} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+
     const handleLogin =data =>{
         console.log(data);
+
+        loginUser(data.email, data.password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            setError('');
+            navigate('/');
+            
+            
+        })
+        .catch(error=> {
+            console.error(error);
+            setError(error.message);
+        });
     }
     
 
@@ -21,13 +42,16 @@ const Login = () => {
                  <label className="label">
                  <span className="label-text font-semibold ">Email</span>
                  </label>
-                 <input type="text" {...register("email")} className="input input-bordered border-info w-full max-w-xs" />
+                 <input type="text" {...register("email", {required: "Email is required"})} className="input input-bordered border-info w-full max-w-xs" />
+                 {errors.email && <p className='text-error'>{errors.email?.message}</p>}
+                 
                  </div>
                 <div className="form-control w-full max-w-xs">
                  <label className="label">
                  <span className="label-text font-semibold">Password</span>
                  </label>
-                 <input type="text" {...register("password")} className="input input-bordered border-info w-full max-w-xs" />
+                 <input type="text" {...register("password", {required: "Password is required", minLength: { value: 6, message:"password must be 6 characters long" }})} className="input input-bordered border-info w-full max-w-xs" />
+                 {errors.password && <p className='text-error'>{errors.password?.message}</p>}
                  <label className="label">
                  <span className="label-text">Forget Password?</span>
                  </label>
@@ -37,6 +61,9 @@ const Login = () => {
                <input className='btn btn-info w-full  text-white' value="Login" type="submit" />
                </form>
                <p className='text-sm py-3' >New to Cell-it? <Link to='/register' className='text-blue-400'>Creat An Account</Link></p>
+               <small className='text-red-700 text-center'>
+                        {error}
+                    </small>
                <div className="divider">OR</div>
                <button className='btn btn-outline border-info w-full'>Login with Google</button>
             </div>

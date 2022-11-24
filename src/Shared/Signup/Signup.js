@@ -1,13 +1,32 @@
 import { useForm } from 'react-hook-form';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Signup = () => {
+    const [error, SetError] =useState('');
 
-    const{register, handleSubmit} = useForm();
+    const{register, formState: {errors}, handleSubmit} = useForm();
+    const {createUser, updateUserProfile} = useContext(AuthContext);
+    const navigate= useNavigate();
+
+
     const handleSignup =data =>{
         console.log(data);
+        createUser(data.email, data.password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            SetError('');
+            navigate('/login');
+            
+            
+        })
+        .catch(error => {
+            console.error(error);
+            SetError(error.message);
+        });
     }
 
     return (
@@ -19,30 +38,34 @@ const Signup = () => {
                 
                 <div className="form-control w-full max-w-xs ">
                  <label className="label">
-                 <span className="label-text font-semibold ">Email</span>
+                 <span className="label-text font-semibold ">Name</span>
                  </label>
-                 <input type="text" {...register("email")} className="input input-bordered border-info w-full max-w-xs" />
+                 <input type="text" {...register("name", {required: true})} className="input input-bordered border-info w-full max-w-xs" />
+                 {errors.name && <p className='text-error'>{errors.name?.message}</p>}
                  </div>
                 <div className="form-control w-full max-w-xs">
                  <label className="label">
-                 <span className="label-text font-semibold">Password</span>
+                 <span className="label-text font-semibold">Email</span>
                  </label>
-                 <input type="password" {...register("password")} className="input input-bordered border-info w-full max-w-xs" />
-                 
+                 <input type="email" {...register("email", {required: "Email is required"})} className="input input-bordered border-info w-full max-w-xs" />
+                 {errors.email && <p className='text-error'>{errors.email?.message}</p>}
                  </div>
 
                 <div className="form-control w-full max-w-xs">
                  <label className="label">
-                 <span className="label-text font-semibold">Confirm Password</span>
+                 <span className="label-text font-semibold">Password</span>
                  </label>
-                 <input type="password" {...register("confirmPassword")} className="input input-bordered border-info w-full max-w-xs" />
-                 
+                 <input type="password" {...register("password", {required: "Password is required", minLength: { value: 6, message:"password must be 6 characters long" }})} className="input input-bordered border-info w-full max-w-xs" />
+                 {errors.password && <p className='text-error'>{errors.password?.message}</p>}
                  </div>
 
                
                <input className='btn btn-info w-full my-3 text-white' value="Signup" type="submit" />
                </form>
                <p className='text-sm my-3' >Already Have An Account? <Link to='/login' className='text-blue-400'>Login Here</Link></p>
+               <small className='text-red-700'>
+                {error}
+            </small>
             </div>
         </div>
     );
