@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import toast from 'react-hot-toast';
+
 
 
 const Signup = () => {
@@ -20,14 +22,22 @@ const Signup = () => {
             console.log(user);
             SetError('');
             navigate('/login');
-            
-            
+            toast('user created sucessfully')
+            const userInfo ={
+                displayname: data.name
+            }
+            updateUserProfile(userInfo)
+            .then(()=>{})
+            .catch(err => console.log(err));         
         })
         .catch(error => {
             console.error(error);
             SetError(error.message);
         });
-    }
+
+}
+
+
 
     return (
         <div className='h-[700px] flex justify-center items-center '>
