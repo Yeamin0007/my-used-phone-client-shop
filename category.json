@@ -1,0 +1,17 @@
+[
+    {
+      "categoryId": "1",
+      "img": "https://ommcomnews.com/wp-content/uploads/2022/09/1601280785_078185_1601281059_noticia_normal.jpg",
+      "title": "IPHONE"
+    },
+    {
+      "categoryId": "2",
+      "img": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16D3C/production/_123200539_samsung3.png",
+      "title": "SAMSUNG"
+    },
+    {
+      "categoryId": "3",
+      "img": "https://cosmosgroup.sgp1.cdn.digitaloceanspaces.com/news/9806519_OnePlus%20Nord%202.jpg",
+      "title": "ONEPLUS"
+    }
+]

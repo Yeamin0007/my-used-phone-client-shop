@@ -11,8 +11,9 @@ const Home = () => {
            <Slider></Slider> 
            <AdvertisedItems></AdvertisedItems>
            <HomeAccount></HomeAccount>
-           <PhoneCategories></PhoneCategories>
            <ContactCard></ContactCard>
+           <PhoneCategories></PhoneCategories>
+           
         </div>
     );
 };

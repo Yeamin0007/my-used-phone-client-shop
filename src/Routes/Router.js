@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Home/Home/Home";
 import Main from "../Layouts/Main/Main";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import ProductCollection from "../Pages/ProductCollection/ProductCollection";
 import Login from "../Shared/Login/Login";
 import Signup from "../Shared/Signup/Signup";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
@@ -23,8 +24,14 @@ export const routes = createBrowserRouter([
                 path:'/register',
                 element: <Signup></Signup>
             },
+            {
+                path: '/category/:categoryId',
+                element: <ProductCollection></ProductCollection>,
+                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.categoryId}`)
+            }
         ]
     },
+
     {
         path: '/dashboard',
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
