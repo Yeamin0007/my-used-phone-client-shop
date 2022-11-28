@@ -30,7 +30,7 @@ const Header = () => {
 const menuSignInOut = <>
 {
     user?.email ?
-        <button onClick={handleLogOut} className="btn btn-info">Logout</button>
+        <button onClick={handleLogOut} className="btn btn-xs md:btn-md btn-info">Logout</button>
         :
         <Link to='/login'><button className="btn btn-info">Login</button></Link>
 }
@@ -38,51 +38,7 @@ const menuSignInOut = <>
 
 
     return (
-        // <div className="navbar bg-[#DEF6FF] text-[#3c4dce] font-bold py-2">
-
-        //     <div className="navbar-start pl-0 md:pl-80">
-
-        //         <div className="dropdown">
-        //             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-        //                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-        //             </label>
-        //             <ul tabIndex={0} className="text-blue-400 text-center menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52">
-        //                 <Link className='motion-safe:hover:scale-110' to='/'>Home</Link>
-        //                 <Link className='motion-safe:hover:scale-110' to='/blog'>Blog</Link>
-        //                 <Link className='motion-safe:hover:scale-110' to='/blog'>Dashboard</Link>
-        //                 <Link className='motion-safe:hover:scale-110' to='/blog'>somehing</Link>
-        //             </ul>
-        //         </div>
-
-        //         <Link className='flex items-center ' to='/'>
-        //             <img className='h-24 motion-safe:hover:scale-110' src={logo1} alt="logo" />
-        //             <h2 className='text-4xl font-bold text-blue-500'>Cell-<span className='text-orange-400'>it</span></h2>
-        //         </Link>
-
-        //     </div>
-
-        //     <div className="navbar-center hidden lg:flex">
-        //         <ul className="menu menu-horizontal p-0 gap-3">
-        //             <Link className='motion-safe:hover:scale-110' to='/'>Home</Link>
-        //             <Link className='motion-safe:hover:scale-110' to='/blog'>Blog</Link>
-        //             <Link className='motion-safe:hover:scale-110' to='/blog'>something</Link>
-        //         </ul>
-        //     </div>
-
-        //     <div className="navbar-end pr-0 md:pr-80">
-        //         {user?.uid?
-        //         <>
-        //         <Link className='font-semibold motion-safe:hover:scale-110 px-8' to='/dashboard'>Dashboard</Link> 
-        //         <button  onClick={handleLogOut} className='btn btn-info'><span>Logout</span></button>
-        //         </>:
-            
-        //         <Link to='/login' className='flex items-center gap-3 motion-safe:hover:scale-110'><span>Login</span><FaUserAlt></FaUserAlt></Link>
-                
-                
-        //         }
-        //     </div>
-
-        // </div >
+       
 
         <div className="navbar bg-[#DEF6FF] text-[#3c4dce] font-bold py-2 px-5  ">
   <div className="navbar-start">
@@ -96,9 +52,9 @@ const menuSignInOut = <>
         }
          </ul>
     </div>
-    <img className='h-24 motion-safe:hover:scale-110' src={logo1} alt="logo" />
+    <img className='h-12 md:h-24 motion-safe:hover:scale-110 ' src={logo1} alt="logo" />
     <Link className='btn btn-ghost normal-case text-xl text-accent' to='/'>
-    <h2 className='text-4xl font-bold text-blue-500'>Cell-<span className='text-orange-400'>it</span></h2>
+    <h2 className='text-2xl md:text-4xl font-bold text-blue-500'>Cell-<span className='text-orange-400'>it</span></h2>
     </Link>
   </div>
 
@@ -115,6 +71,11 @@ const menuSignInOut = <>
       menuSignInOut
     }
   </div>
+
+  <label htmlFor="dashboard-drawer" tabIndex={1} className="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+
 </div>
 
     );
