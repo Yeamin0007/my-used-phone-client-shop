@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const AllBuyers = () => {
+  const [localBuyers, setLocalBuyers] = useState([]);
 
     const {data: buyers = [], refetch} = useQuery({
         queryKey: ['buyers'],
@@ -13,6 +14,24 @@ const AllBuyers = () => {
         }
 
     });
+
+    const handleBuyerDelete = _id => {
+    const proceed = window.confirm('Do you want to delete this review?');
+    if (proceed) {
+        fetch(`http://localhost:5000/buyers/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    toast.success('User Deleted!');
+                    refetch()
+                }
+            })
+    }
+}
+
      const handleAdmin = id =>{
       fetch(`http://localhost:5000/buyers/admin/${id}`, {
         method: 'PUT'
@@ -61,7 +80,9 @@ const AllBuyers = () => {
                  { buyer?.role !== 'admin' && <button onClick={()=>handleAdmin(buyer._id)} className="btn btn-info text-white btn-xs">Admin</button>}
                </th>
                <th>
-                 <button className="btn btn-error text-white btn-xs">Delet User</button>
+               <button onClick={() => handleBuyerDelete(buyer._id)} className="btn  btn-error btn-circle btn-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                  </button>
                </th>
              </tr>)
          }

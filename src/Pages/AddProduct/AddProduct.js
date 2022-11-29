@@ -1,18 +1,59 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import './AddProduct.css'
 
 
 const AddProduct = () => {
-
-    const {user} = useContext(AuthContext);
-    const {displayName, email} = user;
+    const { user } = useContext(AuthContext);
+    const { displayName, email } = user;
+    const navigate = useNavigate();
 
     const handleAddProduct = event => {
+        event.preventDefault();
+        const form = event.target;
 
-        
-
-    }
+        const img = form.img.value;
+        const price = form.price.value;
+        const description = form.description.value;
+        const name = form.name.value;
+        const categoryId = form.categoryId.value;
+        const title = form.title.value;
+        const used = form.used.value;
+        const condition = form.condition.value;
+        const location = form.location.value;
+        const product = {
+            img,
+            price,
+            description,
+            seller: displayName,
+            email,
+            name,
+            categoryId,
+            title,
+            used,
+            condition,
+            location
+        }
+        fetch('http://localhost:5000/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    form.reset();
+                    toast.success('product added sucessfully')
+                    // Navigate('/dashboard/myproducts')
+                    navigate('/dashboard/myproducts')
+                }
+            })
+            .catch(error => console.error(error));
+        }
 
     return (
         <div className="flex items-center justify-center flex-col lg:flex-row p-12 max-w-screen-xl mx-auto " >
@@ -93,9 +134,11 @@ const AddProduct = () => {
                     
 
 
-                    <div className='flex justify-center'>
+                   
+                   <div className='flex justify-center'>
                         <input type="submit" className="btn btn-primary rounded-md py-3 px-8 text-base font-semibold text-white outline-none" value="Add Service" />
                     </div>
+                   
                 </form>
             </div >
         </div >
