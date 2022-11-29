@@ -9,7 +9,11 @@ const MyOrders = () => {
     const {data: orders = [] }= useQuery({
         queryKey:['orders', user?.email],
         queryFn: async () =>{
-            const res = await fetch (url);
+            const res = await fetch (url, {
+              headers: {
+                authorization: `bearer${localStorage.getItem('accessToken')}` 
+              }
+            });
             const data = await res.json();
             return data;
         }
@@ -36,7 +40,7 @@ const MyOrders = () => {
     <tbody>
       
          {
-            orders.map(order =><tr>
+            orders.map(order =><tr key={order._id}>
                 <td>
                  <div className="flex items-center space-x-3">
                    <div className="avatar">

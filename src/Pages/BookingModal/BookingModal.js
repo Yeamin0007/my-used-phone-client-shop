@@ -7,6 +7,7 @@ const BookingModal = ({product, setProduct}) => {
     const {user} = useContext(AuthContext);
     console.log(user);
     const {email, displayName} = user;
+    
     const {name, price, img} = product;
 
     const handleOrder= event => {
