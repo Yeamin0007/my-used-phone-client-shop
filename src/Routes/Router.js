@@ -14,12 +14,15 @@ import AdminRoutes from "./AdminRoutes/AdminRoutes";
 import MyProducts from "../Pages/MyProducts/MyProducts";
 import SellerRoutes from "./SellerRoutes/SellerRoutes";
 import BuyerRoutes from "./BuyerRoutes/BuyerRoutes";
+import Blog from "../Pages/Blog/Blog";
+import Error from "../Shared/Error/Error";
 
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element:<Main></Main>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:'/',
@@ -28,6 +31,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/login',
                 element: <Login></Login>
+            },
+            {
+                path:'/blog',
+                element: <Blog></Blog>
             },
             {
                 path:'/register',
@@ -40,13 +47,12 @@ export const routes = createBrowserRouter([
             }
         ]
     },
-    {
-       path:''
-    },
+    
 
     {
         path: '/dashboard',
         element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+        errorElement: <Error></Error>,
         children:[
             {
                 path:'/dashboard/myorders',

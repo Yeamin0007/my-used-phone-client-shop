@@ -15,7 +15,7 @@ const Header = () => {
 
     const menuItems = <>
 <li><Link to='/' className='text-orange-400'>Home</Link></li>
-<li><Link to='/blogs' className='text-orange-400'>Blog</Link></li>
+<li><Link to='/blog' className='text-orange-400'>Blog</Link></li>
 {
     user?.email ?
         <>
