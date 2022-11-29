@@ -1,8 +1,40 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { AiFillDelete } from "react-icons/ai";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const MyProductCard = ({ product, handleDelete }) => {
+    const navigate = useNavigate();
     console.log(product)
+    const { seller, name, img, price, condition, used, categoryId} = product;
+
+    const handleAdvertise = id => {
+
+        const advertisedProduct = {
+            img,
+            price,
+            seller,
+            name,
+            condition,
+            used,
+            categoryId
+        }
+        fetch('http://localhost:5000/advertisedProduct', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(advertisedProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('product advertised sucessfully')
+                    navigate('/')
+                }
+            })
+            .catch(error => console.error(error));
+    }
 
     return (
 
@@ -31,7 +63,7 @@ const MyProductCard = ({ product, handleDelete }) => {
                 {/* Delete Button */}
 
                 <button onClick={() => handleDelete(product._id)} className="btn btn-ghost"> <AiFillDelete className='text-xl'></AiFillDelete></button>
-
+                <button onClick={handleAdvertise} className="btn btn-ghost"> Advertisement </button>
             </div>
         </div>
 
