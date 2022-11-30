@@ -20,7 +20,7 @@ const Header = () => {
     user?.email ?
         <>
             <li><Link to='/dashboard' className='text-orange-400'>Dashboard</Link></li>
-            <li><Link to='/myReviews' className='text-orange-400'>Something</Link></li>
+            <li><Link to='/about' className='text-orange-400'>About</Link></li>
         </>
         :
         <></>

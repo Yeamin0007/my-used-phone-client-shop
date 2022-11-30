@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Project Name- Cell-It
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Live Link 
+https://wedding-snap-766bd.web.app/
 
-## Available Scripts
+# Admin Id
+Email: cr7@gmail.com
+Password: 777777
 
-In the project directory, you can run:
+# About
+This is a resale phone online shop website, where you can visit by creating an accout. Here I added types of phone models for sell with special offers. You can also add, delete your product by creating a saller account here.
 
-### `npm start`
+## Specially Used
+Node Js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ ### Database
+  MongoDB
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ## Packages
+ During this project I Used :
+ 1. React-Router-Dom
+ 2. Tailwind-css
+ 3. React-Icons
+ 4. React-hot-toast
+ 5. Daisy ui
+ 6. React query
+ 7.Stripe
 
-### `npm test`
+ ## Authentication
+For authentication I used firebase authetication.
+And also used firebase to host this project.
+ 
+ ## Server Loading
+Here I used "vercel" to make a link that helped me to make the local data, global.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Work Process
+First made a Navbar
+Then Creat An Home Page devides by different sections. on Category Section I loaded different phone brands. and added a view phones button
+by clicking view phones button you will find the phones related to that brand. As a seller you can also advertised your product by clicking a advertised button in my product field.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Some Special Features
+1. As a buyer , you can only see your orders on dashboard. 
+2. As a seller , you can only  add products and advertised or delete your product on dashboard.
+3. As a Admin you can make any buyer admin and can verify any seller. And more importantly you can delete any users on dashboard. 

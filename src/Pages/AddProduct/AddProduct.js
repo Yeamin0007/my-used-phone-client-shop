@@ -23,6 +23,8 @@ const AddProduct = () => {
         const used = form.used.value;
         const condition = form.condition.value;
         const location = form.location.value;
+        const postedtime = form.postedtime.value;
+        const originalPrice = form.originalPrice.value;
         const product = {
             img,
             price,
@@ -34,7 +36,9 @@ const AddProduct = () => {
             title,
             used,
             condition,
-            location
+            location,
+            postedtime,
+            originalPrice
         }
         fetch('http://localhost:5000/product', {
             method: 'POST',
@@ -56,7 +60,7 @@ const AddProduct = () => {
         }
 
     return (
-        <div className="flex items-center justify-center flex-col lg:flex-row p-12 max-w-screen-xl mx-auto " >
+        <div className="flex items-center  flex-col lg:flex-row p-12 max-w-screen-xl mx-auto " >
             {/* <div>
                 <img className='w-2/4 mx-auto lg:w-3/5' src={img1} alt=''></img>
             </div> */}
@@ -64,74 +68,79 @@ const AddProduct = () => {
             <h2 className='text-3xl text-center font-bold my-10 text-blue-500'>Add Products</h2>
                 <form onSubmit={handleAddProduct} className='my-20 '  >
                     
-
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-
-                    <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Seller Name</label>
+                <div className="mb-5">
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Seller's Name</label>
                         <input type="text" name="seller" value={displayName} disabled placeholder="Seller Name" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Seller Email</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Seller's Email</label>
                         <input type="email" name="sellerEmail" value={email} disabled placeholder="Seller Email" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+
+                    
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Product Name</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Product Name</label>
                         <input type="text" name="name" placeholder="Enter Name" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Location</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Location</label>
                         <input type="text" name="location" placeholder="Enter Name" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Category ID (Iphone = 1, Samsung = 2, Oneplus = 3)</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Category ID (Iphone = 1, Samsung = 2, Oneplus = 3)</label>
                         <input type="text" name="categoryId" placeholder="Enter Category Id" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Price</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Price</label>
                         <input type="text" name="price" placeholder="Enter Price" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Original Price</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Original Price</label>
                         <input type="text" name="originalPrice" placeholder="Enter Product's Original Price" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Used Time</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Used Time</label>
                         <input type="text" name="used" placeholder="Enter How Long You Used The Product" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Product Condition</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Product Condition</label>
                         <input type="text" name="condition" placeholder="Enter Product Condition" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
 
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">ImageURL</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">ImageURL</label>
                         <input type="text" name="img" placeholder="Enter Photo URL" className="w-full rounded-md border border-slate-300
                      bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
                     </div>
-
                     <div className="mb-5">
-                        <label className="mb-3 block text-xl font-semibold text-blue-500">Description</label>
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Posted Date/Time</label>
+                        <input type="text" name="postedtime" placeholder="Enter Today's Date" className="w-full rounded-md border border-slate-300
+                     bg-white py-3 px-6 font-medium outline-none focus:border-primary focus:shadow-md" required />
+                    </div>
+
+                    
+
+                    </div>
+                    <div className="mb-5">
+                        <label className="mb-3 block text-xl font-semibold text-blue-500 text-start">Description</label>
                         <textarea rows="5" name="description" placeholder="Enter A Description"
                             className="w-full resize-none rounded-md border border-slate-300 bg-white py-3 px-6 outline-none font-medium  focus:border-primary focus:shadow-md" required></textarea>
                     </div>
-
-                    </div>
-                    
 
 
                    

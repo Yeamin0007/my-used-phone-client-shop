@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GoMegaphone } from "react-icons/go"
 
 const AdvertisedItems = () => {
     const [advertisedProducts, setAdvertisedProducts] = useState([]);
@@ -23,14 +24,14 @@ const AdvertisedItems = () => {
                         {product.name}
                         <div className="badge badge-secondary">NEW</div>
                       </h2>
-                      <p>Seller: {product.seller}</p>
+                      <p className='text-semibold'>Seller: {product.seller}</p>
                       <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Price: Tk.{product.price}</div> 
-                        <div className="badge badge-outline ">Condition: {product.condition}</div>
+                        <div className="badge badge-outline text-blue-500 font-semibold" >Price: Tk.{product.price}</div> 
+                        <div className="badge badge-outline text-green-500 font-semibold">Condition: {product.condition}</div>
                       </div>
                     </div>
                     <div className="flex items-center justify-center pb-5">
-                                <Link to={`/category/${product.categoryId}`}> <button className="btn btn-xs btn-primary">View Details</button></Link>
+                                <Link to={`/category/${product.categoryId}`}> <button className="btn btn-xs btn-info text-white">View Details</button></Link>
                             </div>
                   </div>
                     )

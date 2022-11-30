@@ -1,0 +1,7 @@
+.first{
+    min-height: 100vh;
+}
+.second{
+    position: sticky;
+    top: 100%;
+}

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const MyProductCard = ({ product, handleDelete }) => {
     const navigate = useNavigate();
     console.log(product)
-    const { seller, name, img, price, condition, used, categoryId} = product;
+    const { seller, name, img, price, condition, used, categoryId, postedtime, originalPrice} = product;
 
     const handleAdvertise = id => {
 
@@ -18,7 +18,8 @@ const MyProductCard = ({ product, handleDelete }) => {
             name,
             condition,
             used,
-            categoryId
+            categoryId,
+            postedtime,originalPrice
         }
         fetch('http://localhost:5000/advertisedProduct', {
             method: 'POST',
@@ -48,8 +49,9 @@ const MyProductCard = ({ product, handleDelete }) => {
             <div className=" card-body text-start ">
                 <h2 className="text-xl font-bold pb-5 text-blue-500">{product.name}</h2>
                 <p> <span className='font-semibold text-lg'> Description :</span> {product.description}.</p>
-                <p> <span className='font-semibold text-lg'> Originalprice: </span>{product.originalprice}.</p>
+                <p> <span className='font-semibold text-lg'> Originalprice: </span>{product.originalPrice}.</p>
                 <p> <span className='font-semibold text-lg'> Product used :</span> {product.used}.</p>
+                <p> <span className='font-semibold text-lg'> Posted :</span> {product.postedtime}.</p>
 
                 <div className='flex justify-between py-5'>
 

@@ -17,6 +17,7 @@ import BuyerRoutes from "./BuyerRoutes/BuyerRoutes";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Shared/Error/Error";
 import Payment from "../Pages/Dashboard/Dashboard/Payment/Payment";
+import About from "../Pages/About/About";
 
 
 export const routes = createBrowserRouter([
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path:'/about',
+                element: <About></About>
             },
             {
                 path:'/register',

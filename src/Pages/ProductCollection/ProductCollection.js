@@ -25,7 +25,7 @@ const ProductCollection = () => {
                 <div className=" card-body px-4">
                   <h2 className="text-xl font-bold pb-5 text-blue-500">{products.name}</h2>
                   <p> <span className='font-semibold text-lg'> Description :</span> {products.description}.</p>
-                  <p> <span className='font-semibold text-lg'> Reason for selling: </span>{products.reason}.</p>
+                  <p> <span className='font-semibold text-lg'> Posted Time: </span>{products.postedtime}.</p>
                   <p> <span className='font-semibold text-lg'> Product used :</span> {products.used}.</p>
                     
                     <div className='flex justify-between py-5'>
