@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useAdmin from '../../hooks/UseAdmin/useAdmin';
-import useBuyer from '../../hooks/UseBuyer/useBuyer';
 import useSeller from '../../hooks/UseSeller/useSeller';
 import Header from '../../Shared/Header/Header';
 
@@ -10,7 +9,7 @@ const DashboardLayout = () => {
     const {user} = useContext(AuthContext);
     const [isAdmin] =useAdmin(user?.email)
     const [isSeller] = useSeller(user?.email)
-    const [isBuyer] = useBuyer(user?.email)
+    
     return (
         <div>
             <Header></Header>

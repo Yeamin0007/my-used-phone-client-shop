@@ -13,7 +13,6 @@ import AllSeller from "../Pages/AllSeller/AllSeller";
 import AdminRoutes from "./AdminRoutes/AdminRoutes";
 import MyProducts from "../Pages/MyProducts/MyProducts";
 import SellerRoutes from "./SellerRoutes/SellerRoutes";
-import BuyerRoutes from "./BuyerRoutes/BuyerRoutes";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Shared/Error/Error";
 import Payment from "../Pages/Dashboard/Dashboard/Payment/Payment";
