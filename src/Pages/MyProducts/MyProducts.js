@@ -9,7 +9,7 @@ const MyProducts = () => {
     const [myProducts, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myproducts?email=${user?.email}`)
+        fetch(`https://cell-it-server.vercel.app/myproducts?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [user?.email])
@@ -19,7 +19,7 @@ const MyProducts = () => {
     const handleDelete = _id => {
         const proceed = window.confirm('Do you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/myproducts/${_id}`, {
+            fetch(`https://cell-it-server.vercel.app/myproducts/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

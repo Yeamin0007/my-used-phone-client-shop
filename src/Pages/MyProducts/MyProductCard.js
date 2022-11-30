@@ -21,7 +21,7 @@ const MyProductCard = ({ product, handleDelete }) => {
             categoryId,
             postedtime,originalPrice
         }
-        fetch('http://localhost:5000/advertisedProduct', {
+        fetch('https://cell-it-server.vercel.app/advertisedProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

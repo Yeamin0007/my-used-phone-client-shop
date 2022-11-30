@@ -7,14 +7,14 @@ const AllSeller = () => {
   const { data: buyers = [], refetch } = useQuery({
     queryKey: ['buyers'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/buyers?role=seller');
+      const res = await fetch('https://cell-it-server.vercel.app/buyers?role=seller');
       const data = await res.json();
       return data;
     }
 
   });
   const handleAdmin = id => {
-    fetch(`http://localhost:5000/buyers/admin/${id}`, {
+    fetch(`https://cell-it-server.vercel.app/buyers/admin/${id}`, {
       method: 'PUT'
     })
       .then(res => res.json())
@@ -29,7 +29,7 @@ const AllSeller = () => {
   const handleSellerDelete = _id => {
     const proceed = window.confirm('Do you want to delete this review?');
     if (proceed) {
-        fetch(`http://localhost:5000/buyers/${_id}`, {
+        fetch(`https://cell-it-server.vercel.app/buyers/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

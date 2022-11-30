@@ -40,7 +40,7 @@ const AddProduct = () => {
             postedtime,
             originalPrice
         }
-        fetch('http://localhost:5000/product', {
+        fetch('https://cell-it-server.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

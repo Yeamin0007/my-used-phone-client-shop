@@ -31,7 +31,7 @@ const BookingModal = ({product, setProduct}) => {
         console.log(booking);
         setProduct(null);
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://cell-it-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

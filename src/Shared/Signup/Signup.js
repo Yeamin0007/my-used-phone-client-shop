@@ -46,7 +46,7 @@ const Signup = () => {
     }
     const saveBuyer = (name, email, role) => {
         const user = { name, email, role };
-        fetch('http://localhost:5000/buyers', {
+        fetch('https://cell-it-server.vercel.app/buyers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -49,7 +49,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:categoryId',
                 element: <PrivateRoutes><ProductCollection></ProductCollection></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.categoryId}`)
+                loader: ({ params }) => fetch(`https://cell-it-server.vercel.app/brands/${params.categoryId}`)
             }
         ]
     },
@@ -67,7 +67,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader:  ({params}) => fetch(`http://localhost:5000/orders/${params.id}`)
+                loader:  ({params}) => fetch(`https://cell-it-server.vercel.app/orders/${params.id}`)
             },
             {
                 path:'/dashboard/allbuyers',
