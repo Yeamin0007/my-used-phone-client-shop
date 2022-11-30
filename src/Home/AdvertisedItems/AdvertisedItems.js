@@ -20,17 +20,17 @@ const AdvertisedItems = () => {
                     advertisedProducts.map(product => <div key={product._id} className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={product.img} alt="Shoes" /></figure>
                     <div className="card-body">
-                      <h2 className="card-title">
+                      <h2 className="card-title text-blue-500">
                         {product.name}
                         <div className="badge badge-secondary">NEW</div>
                       </h2>
-                      <p className='text-semibold'>Seller: {product.seller}</p>
+                      <p className='font-semibold'>Seller: {product.seller}</p>
                       <div className="card-actions justify-end">
                         <div className="badge badge-outline text-blue-500 font-semibold" >Price: Tk.{product.price}</div> 
                         <div className="badge badge-outline text-green-500 font-semibold">Condition: {product.condition}</div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-center pb-5">
+                    <div className="flex items-center justify-end px-5 pb-5">
                                 <Link to={`/category/${product.categoryId}`}> <button className="btn btn-xs btn-info text-white">View Details</button></Link>
                             </div>
                   </div>

@@ -62,7 +62,7 @@ export const routes = createBrowserRouter([
         children:[
             {
                 path:'/dashboard/myorders',
-                element: <BuyerRoutes><MyOrders></MyOrders></BuyerRoutes>
+                element: <MyOrders></MyOrders>
             },
             {
                 path:'/dashboard/payment/:id',

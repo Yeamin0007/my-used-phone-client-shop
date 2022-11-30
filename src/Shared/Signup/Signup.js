@@ -64,7 +64,7 @@ const Signup = () => {
 
     return (
         <div className='h-[700px] flex justify-center items-center '>
-            <div className='w-96 px-10 py-10 bg-blue-100 rounded-md'>
+            <div className='w-96 px-10 py-10 bg-[#DEF6FF] rounded-md'>
                 <h2 className='text-4xl font-bold text-center text-blue-400 my-3'>SIGN UP</h2>
                 <form onSubmit={handleSubmit(handleSignup)}>
 
@@ -77,7 +77,7 @@ const Signup = () => {
                         {errors.name && <p className='text-error'>{errors.name?.message}</p>}
                     </div>
 
-                    <select id='role' name='role' className="select w-full max-w-xs my-3" required>
+                    <select id='role' name='role' className="select w-full max-w-xs my-3 border-info" required>
                         <option selected value='buyer'>Buyer</option>
                         <option value='seller'>Seller</option>
                         
