@@ -33,9 +33,13 @@ const MyProducts = () => {
                 })
         }
     }
+    
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto'>
+        <div>
+            <h2 className='text-center text-3xl text-blue-500 my-3 font-bold'>My Products</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-screen-xl mx-10'>
+            
             {
                 myProducts.map(product => <MyProductCard
                     key={product._id}
@@ -44,6 +48,7 @@ const MyProducts = () => {
                 >
                 </MyProductCard>)
             }
+        </div>
         </div>
     );
 };

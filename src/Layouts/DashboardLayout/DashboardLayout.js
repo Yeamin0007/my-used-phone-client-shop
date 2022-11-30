@@ -28,21 +28,21 @@ const DashboardLayout = () => {
                         
                         {  isBuyer && <>
                             
-                            <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                            <li><Link className='text-xl font-bold text-center text-blue-500' to='/dashboard/myorders'>My Orders</Link></li>
                         </>
                             
                         }
                         
                         {
                             isAdmin && <>
-                            <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
-                        <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
+                            <li><Link className='text-xl font-bold text-center text-blue-500' to='/dashboard/allbuyers'>All Buyers</Link></li>
+                        <li><Link className='text-xl font-bold text-center text-blue-500' to='/dashboard/allsellers'>All Sellers</Link></li>
                             </>
                         }
                         {
                              isSeller && <>
-                             <li><Link to='/dashboard/addproducts'>Add Products</Link></li>
-                            <li><Link to='/dashboard/myproducts'>My Products</Link></li>
+                             <li><Link className='text-xl font-bold text-center text-blue-500' to='/dashboard/addproducts'>Add Products</Link></li>
+                            <li><Link className='text-xl font-bold text-center text-blue-500' to='/dashboard/myproducts'>My Products</Link></li>
                         
                             </>
                         }

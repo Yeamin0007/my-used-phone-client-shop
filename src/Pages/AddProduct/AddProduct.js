@@ -61,7 +61,7 @@ const AddProduct = () => {
                 <img className='w-2/4 mx-auto lg:w-3/5' src={img1} alt=''></img>
             </div> */}
             <div className="mx-auto w-full max-w-auto px-8 bg-blue-50 ">
-            <h2 className='text-5xl text-center font-bold my-10 text-blue-500'>Add Products</h2>
+            <h2 className='text-3xl text-center font-bold my-10 text-blue-500'>Add Products</h2>
                 <form onSubmit={handleAddProduct} className='my-20 '  >
                     
 

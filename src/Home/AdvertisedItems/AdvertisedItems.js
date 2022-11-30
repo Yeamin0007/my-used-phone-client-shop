@@ -13,6 +13,7 @@ const AdvertisedItems = () => {
 
     return (
         <div className="max-w-screen-xl mx-auto md:pt-10 pb-6">
+          <marquee className=' font-bold text-xl text-white bg-blue-400'>New Arivals. Grab Your Phone Before Others Do.</marquee>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-12'>
                 {
                     advertisedProducts.map(product => <div key={product._id} className="card w-96 bg-base-100 shadow-xl">
